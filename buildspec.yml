@@ -24,7 +24,7 @@ phases:
     commands:
       - echo Build completed
       - mkdir -p build
-      - cp -r ./* build/
+      - rsync -av --exclude='build/' ./ build/
       - cd build
       - zip -r app.zip .
 
