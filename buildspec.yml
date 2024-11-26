@@ -24,11 +24,11 @@ phases:
     commands:
       - echo Build completed
       - mkdir -p build
-      - cp -r . build/
-      # Create a zip file for deployment
-      - zip -r application.zip build
+      - cp -r ./* build/
+      - cd build
+      - zip -r app.zip .
 
 artifacts:
   files:
-    - application.zip
+    - build/app.zip
   name: my-app-artifact
